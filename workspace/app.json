@@ -1,0 +1,17 @@
+{
+  "pages":[
+   
+    "pages/order/order",
+    "pages/index/index",
+    "pages/pay/pay"
+   
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#FF3300",
+    "navigationBarTitleText": "好吃的餐厅",
+    "navigationBarTextStyle":"white"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

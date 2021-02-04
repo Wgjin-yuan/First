@@ -1,0 +1,58 @@
+<!--pages/order/order.wxml-->
+<view>
+<!-- 还没写的轮播图-->
+<view>
+<image  src="https://riyugo.com/i/2021/01/28/10egbc5.png" mode="aspectFill"></image>
+</view>
+
+<!--菜单-->
+<view class="content">
+
+  <!--左导航-->
+  <view class="left">
+    <view class="menu-box" wx:for="{{menu}}" wx:key="{{index}}">
+      <view class="{{active==index?'selected':'normal'}}"  id="{{index}}"  bindtap='switchNav'> {{index}} {{item.name}}</view>
+    </view>
+  </view>
+
+    <!--右显示-->
+
+
+    <view class="right">
+<view class="menu-goods">
+<swiper current='{{currentTab}}' vertical='{{true}}' >
+  <swiper-item id="index" catchtouchmove="false" wx:for="{{menu}}" wx:key="id">
+        <view  data-key='{{item.id + "-" + goods.id }}' wx:for="{{foodList}}" wx:for-item="goods" wx:key="id">
+          <text  class="goods-title">{{goods.title}}</text>
+          <text class="goods-price">￥{{goods.price}}</text>
+
+          <view class="goods-count" >
+                    <text class="goods-down" bindtap="minusCount" hidden="{{goods.num<=0}}"  data-index="{{index}}">-</text>
+                    <text class="goods-num" hidden="{{goods.num<=0}}">{{goods.num}}</text>
+                    <text class="goods-add" bindtap="addCount" data-index="{{index}}">+</text>
+                </view>
+
+        </view>
+        
+     
+        </swiper-item>
+</swiper>
+</view>
+</view>
+
+
+<!--购物车-->
+<view>
+  <view wx:for="{{cartList}}" wx:key="{{index}}">{{item.title}}  {{item.num}}</view>
+</view>
+
+<!--结算-->
+<view class="goods-balance">
+  <text class="goods-total">￥{{totalPrice}}</text>
+  <navigator url="../pay/pay"> 结算</navigator>
+</view>
+
+</view>
+</view>
+
+

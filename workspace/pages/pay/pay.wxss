@@ -1,0 +1,12 @@
+/* pages/pay/pay.wxss */
+.items{
+  width: 100%;
+  height: 100rpx;
+  font-size: 32rpx;
+  text-align: center;
+  line-height: 100rpx;
+}
+.selected{
+  background-color: #FFAD75;
+  color: #fff;
+}
